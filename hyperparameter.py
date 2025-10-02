@@ -82,7 +82,8 @@ if __name__ == '__main__':
         study = optuna.create_study(direction="maximize")
 
     t_start = time.time()
-    study.optimize(hyper.objective, n_trials=50, timeout=75600)
+    # study.optimize(hyper.objective, n_trials=50, timeout=75600)
+    study.optimize(hyper.objective, n_trials=5, timeout=75600)
     len(study.get_trials())
     print("Time: {:.3f}s".format(time.time() - t_start))
 
